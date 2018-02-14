@@ -73,6 +73,27 @@ public class Colosseum {
      */
     public static Pokemon buildPokemon() {
         Pokemon tempPokemon = new Pokemon();
+        myScan = new Scanner(System.in);
+        System.out.println("Please name your Pokemon:");
+        tempPokemon.name = myScan.next();
+        System.out.println("How many hit points will it have? (1-50)");
+        tempPokemon.hitPoints = myScan.nextInt();
+        while (tempPokemon.hitPoints < 1 || tempPokemon.hitPoints > MAX_HIT_POINTS) {
+            System.out.println("Sorry. Hit points must be between 1 an 50:");
+            tempPokemon.hitPoints = myScan.nextInt();
+        }
+        System.out.println("Enter your attack level(1-49):");
+        tempPokemon.attackLevel = myScan.nextInt();
+        while (tempPokemon.attackLevel < 1 || tempPokemon.attackLevel > MAX_HIT_POINTS - 1) {
+            System.out.println("Sorry. The attack level must be between 1 an 50:");
+            tempPokemon.attackLevel = myScan.nextInt();
+        }
+        System.out.println("Enter your defense level (1-3):");
+        tempPokemon.defenseLevel = myScan.nextInt();
+        while (tempPokemon.defenseLevel < 1 || tempPokemon.defenseLevel > (MAX_HIT_POINTS / 2) + 1) {
+            System.out.println("Sorry. The defense level must be between 1 an 23:");
+            tempPokemon.defenseLevel = myScan.nextInt();
+        }
         return tempPokemon;
     }
 
@@ -90,7 +111,7 @@ public class Colosseum {
      * Implement this function.
      */
     public static void printWhoIsAhead() {
-        System.out.println("Implement me!");
+
     }
 
     /**
